@@ -1,6 +1,6 @@
 package com.first.demo.game;
 
-public class MarioGame implements GamingConsole {
+public class SuperContraGame implements GamingConsole {
     public void up() {
         System.out.println("up");
     }
