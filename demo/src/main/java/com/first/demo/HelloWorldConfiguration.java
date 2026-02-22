@@ -1,12 +1,11 @@
 package com.first.demo;
 
-import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.ReflectionUtils;
 
-import java.time.temporal.ValueRange;
 
-record Person(String name, int age) {
+record Person(String name, int age, Address address) {
 }
 
 record Address(String firstLine, String secondLine, int pinCode) {
@@ -27,11 +26,21 @@ public class HelloWorldConfiguration {
 
     @Bean
     Person person() {
-        return new Person("Hardik", 23);
+        return new Person("Hardik", 23, address());
+    }
+
+    @Bean(name = "personAddress")
+    Address address() {
+        return new Address("Malad", "East", 400097);
     }
 
     @Bean
-    Address address() {
-        return new Address("Malad", "East", 400097);
+    Person person2MethodCall() {
+        return new Person(name(), age(), address());
+    }
+
+    @Bean
+    Person person3Parameter(String name, int age, Address personAddress) {
+        return new Person(name, age, personAddress);
     }
 }
