@@ -2,18 +2,18 @@ package com.first.demo.game;
 
 public class MarioGame implements GamingConsole {
     public void up() {
-        System.out.println("up");
+        System.out.println("Mario: up");
     }
 
     public void down() {
-        System.out.println("down");
+        System.out.println("Mario: down");
     }
 
     public void right() {
-        System.out.println("Shoot");
+        System.out.println("Mario: Shoot");
     }
 
     public void left() {
-        System.out.println("Go Back");
+        System.out.println("Mario: Go Back");
     }
 }
