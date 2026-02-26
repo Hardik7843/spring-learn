@@ -1,12 +1,13 @@
 package com.first.demo.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GameRunner {
     GamingConsole game;
 
-    public GameRunner(GamingConsole game) {
+    public GameRunner(@Qualifier("Pick_SuperContraGame") GamingConsole game) {
         this.game = game;
     }
 
