@@ -1,5 +1,8 @@
 package com.first.demo.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
     GamingConsole game;
 
