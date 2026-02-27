@@ -1,11 +1,36 @@
 package com.first.demo.examples.a1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-import javax.naming.Name;
 import java.util.Arrays;
+
+@Component
+class YourBusinessClass {
+    @Autowired
+    Depedenncy1 depedenncy1;
+
+
+    @Autowired
+    Dependency2 dependency2;
+
+    public String toString() {
+        return "Using " + depedenncy1 + " and " + dependency2;
+    }
+}
+
+@Component
+class Depedenncy1 {
+}
+
+@Component
+class Dependency2 {
+
+}
+
 
 @Configuration
 @ComponentScan
@@ -16,6 +41,7 @@ public class DepInjectionLauncherApplication {
             var stream = Arrays.stream(context.getBeanDefinitionNames());
 
             stream.forEach(name -> System.out.println(name));
+            System.out.println(context.getBean(YourBusinessClass.class));
         }
     }
 }
