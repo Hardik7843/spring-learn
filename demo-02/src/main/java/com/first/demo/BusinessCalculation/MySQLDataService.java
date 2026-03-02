@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Qualifier("MySQLDataService")
 public class MySQLDataService implements DataService {
-    
+
     public int[] retrievedData() {
+        System.out.println("Running MongoDB Service..");
         return new int[]{11, 22, 33, 44, 55,};
     }
 }

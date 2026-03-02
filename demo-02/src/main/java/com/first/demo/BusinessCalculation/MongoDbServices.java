@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class MongoDbServices implements DataService {
 
     public int[] retrievedData() {
+        System.out.println("Running MongoDB Service..");
         return new int[]{1, 2, 3, 4, 5, 6};
     }
 }
