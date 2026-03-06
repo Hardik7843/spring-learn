@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 @Component
 class SomeClass {
@@ -23,6 +24,12 @@ class SomeClass {
         someDependency.getReady();
     }
 
+
+    @PreDestroy
+    public void cleanup() {
+        System.out.println("Cleaning up before killing object.");
+    }
+
     
 }
 
@@ -32,6 +39,8 @@ class SomeDependency {
     void getReady() {
         System.out.println("Some Logic Using someDepency!");
     }
+
+
 
 }
 
