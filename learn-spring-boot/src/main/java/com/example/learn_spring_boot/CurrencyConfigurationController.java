@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CourseController {
+public class CurrencyConfigurationController {
 
-//    @RequestMapping("/courses") // General to any requests.
+    
+
     @GetMapping("/courses") //specific to GET requests.
     public List<Course> retrieveAllCourses() {
         return Arrays.asList(
