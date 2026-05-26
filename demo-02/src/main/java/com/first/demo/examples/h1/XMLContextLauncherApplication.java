@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.first.demo.game.GameRunner;
+
 
 public class XMLContextLauncherApplication {
 
@@ -15,6 +17,8 @@ public class XMLContextLauncherApplication {
 
             System.out.println(context.getBean("name"));
             System.out.println(context.getBean("age"));
+
+            context.getBean(GameRunner.class).run();
         }
     }
 }
