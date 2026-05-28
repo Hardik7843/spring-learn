@@ -3,15 +3,15 @@ package com.example.restful_web_services.user;
 import java.time.LocalDate;
 
 public class User {
-    private long id;
+    private Integer id;
     private String name;
     private LocalDate dateOfBirth;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -31,10 +31,10 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public User(LocalDate dateOfBirth, long id, String name) {
-        this.dateOfBirth = dateOfBirth;
+    public User(Integer id, String name, LocalDate dateOfBirth) {
         this.id = id;
         this.name = name;
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override
