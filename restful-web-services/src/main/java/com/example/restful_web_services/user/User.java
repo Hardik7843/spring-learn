@@ -39,6 +39,9 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public User() {
+    }
+
     public User(Integer id, String name, LocalDate dateOfBirth) {
         this.id = id;
         this.name = name;

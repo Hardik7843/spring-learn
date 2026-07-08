@@ -30,7 +30,7 @@ public class UserResource {
 
     // GET /users/{id}
     @GetMapping("/users/{id}")
-    public User retriveUser(@PathVariable int id) {
+    public User retriveUser(@PathVariable("id") int id) {
         User foundUser = service.findOne(id);
         if (foundUser == null) {
             throw new UserNotFoundException("User Not Found");
@@ -39,7 +39,7 @@ public class UserResource {
     }
 
     @DeleteMapping("/users/{id}")
-    public User deleteOneUser(@PathVariable int id) {
+    public User deleteOneUser(@PathVariable("id") int id) {
         User deletedUser = service.deleteById(id);
         if (deletedUser == null) {
             throw new UserNotFoundException("User Not Found");
